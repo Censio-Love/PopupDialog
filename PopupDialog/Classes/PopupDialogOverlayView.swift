@@ -108,7 +108,11 @@ final public class PopupDialogOverlayView: UIView {
         autoresizingMask = [.flexibleHeight, .flexibleWidth]
         backgroundColor = .clear
         alpha = 0
-
+        
+        if blurEnabled {
+            addSubview(blurView)
+        }
+        
         addSubview(overlay)
     }
 
