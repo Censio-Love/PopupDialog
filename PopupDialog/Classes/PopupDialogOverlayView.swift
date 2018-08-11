@@ -119,7 +119,7 @@ final public class PopupDialogOverlayView: UIView {
         if blurEnabled {
             addSubview(blurView)
         } else {
-            print("Skipping the blur")
+            print("No blur…")
         }
         
         addSubview(overlay)
