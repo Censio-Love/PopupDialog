@@ -28,13 +28,22 @@ import DynamicBlurView
 
 /// The (blurred) overlay view below the popup dialog
 final public class PopupDialogOverlayView: UIView {
-
+    
+    private static var _blurEnabled: Bool = true
+    
     // MARK: - Appearance
-
+    
     /// Turns the blur of the overlay view on or off
     @objc public dynamic var blurEnabled: Bool {
-        get { return !blurView.isHidden }
-        set { blurView.isHidden = !newValue }
+        get { return PopupDialogOverlayView._blurEnabled }
+        set (enabled) {
+            PopupDialogOverlayView._blurEnabled = enabled
+            if enabled && blurView.superview == nil {
+                addSubview(blurView)
+            } else {
+                blurView.removeFromSuperview()
+            }
+        }
     }
     
     /// The blur radius of the overlay view
@@ -106,8 +115,13 @@ final public class PopupDialogOverlayView: UIView {
         autoresizingMask = [.flexibleHeight, .flexibleWidth]
         backgroundColor = .clear
         alpha = 0
-
-        addSubview(blurView)
+        
+        if blurEnabled {
+            addSubview(blurView)
+        } else {
+            print("Skipping the blur")
+        }
+        
         addSubview(overlay)
     }
 
