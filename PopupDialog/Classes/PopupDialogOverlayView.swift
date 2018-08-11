@@ -29,7 +29,7 @@ import DynamicBlurView
 /// The (blurred) overlay view below the popup dialog
 final public class PopupDialogOverlayView: UIView {
     
-    private static var _blurEnabled: Bool = true
+    public static var _blurEnabled: Bool = true
     
     // MARK: - Appearance
     
