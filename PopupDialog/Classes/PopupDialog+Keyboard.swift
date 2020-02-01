@@ -35,42 +35,42 @@ internal extension PopupDialog {
     /*! Add obserservers for UIKeyboard notifications */
     func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged),
-                                                         name: UIDevice.orientationDidChangeNotification,
-                                                         object: nil)
+                                               name: UIDevice.orientationDidChangeNotification,
+                                               object: nil)
 
         NotificationCenter.default.addObserver(self,
-                                                         selector: #selector(keyboardWillShow),
-                                                         name: UIResponder.keyboardWillShowNotification,
-                                                         object: nil)
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
 
         NotificationCenter.default.addObserver(self,
-                                                         selector: #selector(keyboardWillHide),
-                                                         name: UIResponder.keyboardWillHideNotification,
-                                                         object: nil)
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
 
         NotificationCenter.default.addObserver(self,
-                                                         selector: #selector(keyboardWillChangeFrame),
-                                                         name: UIResponder.keyboardWillChangeFrameNotification,
-                                                         object: nil)
+                                               selector: #selector(keyboardWillChangeFrame),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
     }
 
     /*! Remove observers */
     func removeObservers() {
         NotificationCenter.default.removeObserver(self,
-                                                            name: UIDevice.orientationDidChangeNotification,
-                                                            object: nil)
+                                                  name: UIDevice.orientationDidChangeNotification,
+                                                  object: nil)
 
         NotificationCenter.default.removeObserver(self,
-                                                            name: UIResponder.keyboardWillShowNotification,
-                                                            object: nil)
+                                                  name: UIResponder.keyboardWillShowNotification,
+                                                  object: nil)
 
         NotificationCenter.default.removeObserver(self,
-                                                            name: UIResponder.keyboardWillHideNotification,
-                                                            object: nil)
+                                                  name: UIResponder.keyboardWillHideNotification,
+                                                  object: nil)
 
         NotificationCenter.default.removeObserver(self,
-                                                            name: UIResponder.keyboardWillChangeFrameNotification,
-                                                            object: nil)
+                                                  name: UIResponder.keyboardWillChangeFrameNotification,
+                                                  object: nil)
     }
 
     // MARK: - Actions
